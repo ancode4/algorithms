@@ -1,4 +1,4 @@
-package examples;
+package examples.hackerrank;
 
 import java.util.*;
 
@@ -72,8 +72,8 @@ public class BfsShortestReach {
 
 
 class Graph {
-    private int[] outputArray; // holds distances of n-1 nodes apart from start node
-    private Map<Integer,List<Integer>> nodeEdgeMap = new HashMap<>(); // holds List of edge endpoints for a node
+    private final int[] outputArray; // holds distances of n-1 nodes apart from start node
+    private final Map<Integer,List<Integer>> nodeEdgeMap = new HashMap<>(); // holds List of edge endpoints for a node
     int starterNode;
     private final int edgeLength = 6;
     int numberOfNodes;
@@ -107,9 +107,7 @@ class Graph {
         for(Integer node : nodeEdgeMap.keySet()){
           //  System.out.print("Node: "+node+", {");
             List<Integer> edges = nodeEdgeMap.get(node);
-            for(Integer edge: edges) {
             //    System.out.print("["+edge+"]");
-            }
             //System.out.print("}");
             //System.out.println();
         }
@@ -139,8 +137,8 @@ class Graph {
 
         // 4. Update distance of
         System.out.println("Distance array: ");
-        for(int i=0; i< outputArray.length; i++){
-            System.out.print(outputArray[i]+" ");
+        for (int j : outputArray) {
+            System.out.print(j + " ");
         }
     }
 }

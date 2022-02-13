@@ -1,4 +1,4 @@
-package examples;
+package examples.hackerrank;
 
 
 import java.util.Scanner;
@@ -24,11 +24,7 @@ public class BinaryTreeHeight {
         }
         int leftHeight = root.left ==null ? 0 : 1+height(root.left) ;
         int rightHeight = root.right ==null ? 0 : 1+height(root.right) ;
-        if(leftHeight > rightHeight) {
-            return leftHeight;
-        }else{
-            return rightHeight;
-        }
+        return Math.max(leftHeight, rightHeight);
     }
 
     public static Node insert(Node root, int data) {

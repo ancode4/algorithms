@@ -1,4 +1,4 @@
-package examples;
+package examples.hackerrank;
 
 import java.util.*;
 
@@ -77,7 +77,7 @@ public class BFSShortestReach2 {
 
     private static class Graph {
         int[] outputArray;
-        private int[][] nodeGraph; // holds node to node connection matrix
+        private final int[][] nodeGraph; // holds node to node connection matrix
         int starterNode;
         private final int edgeLength = 6;
         int numberOfNodes;
