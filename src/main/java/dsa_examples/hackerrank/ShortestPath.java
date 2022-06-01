@@ -1,4 +1,4 @@
-package examples.hackerrank;
+package dsa_examples.hackerrank;
 
 public class ShortestPath {
         // A utility function to find the vertex with minimum distance value,

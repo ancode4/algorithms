@@ -1,4 +1,4 @@
-package examples.hackerrank;
+package dsa_examples.hackerrank;
 /*
     Use array for holding distance values for index i which represents vertex
 

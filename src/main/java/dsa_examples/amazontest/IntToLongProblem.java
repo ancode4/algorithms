@@ -1,4 +1,4 @@
-package examples.amazontest;
+package dsa_examples.amazontest;
 
 import java.util.Scanner;
 

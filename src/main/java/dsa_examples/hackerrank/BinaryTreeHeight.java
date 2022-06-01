@@ -1,15 +1,9 @@
-package examples.hackerrank;
+package dsa_examples.hackerrank;
+
 
 import java.util.Scanner;
 
-public class LevelOrderTraversal {
-    public static void levelOrder(Node root) {
-        if(root != null) {
-            System.out.print(root.data+" ");
-            levelOrder(root.left);
-            levelOrder(root.right);
-        }
-    }
+public class BinaryTreeHeight {
 
     private static class Node {
         Node left;
@@ -21,6 +15,16 @@ public class LevelOrderTraversal {
             left = null;
             right = null;
         }
+    }
+
+    public static int height(Node root) {
+        // Write your code here.
+        if(root == null) {
+            return 0;
+        }
+        int leftHeight = root.left ==null ? 0 : 1+height(root.left) ;
+        int rightHeight = root.right ==null ? 0 : 1+height(root.right) ;
+        return Math.max(leftHeight, rightHeight);
     }
 
     public static Node insert(Node root, int data) {
@@ -48,6 +52,7 @@ public class LevelOrderTraversal {
             root = insert(root, data);
         }
         scan.close();
-        levelOrder(root);
+        int height = height(root);
+        System.out.println(height);
     }
 }

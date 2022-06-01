@@ -1,4 +1,4 @@
-package examples.hackerrank;
+package dsa_examples.hackerrank;
 
 import java.util.*;
 

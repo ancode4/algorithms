@@ -1,4 +1,4 @@
-package examples.amazondemo;
+package dsa_examples.amazondemo;
 
 import java.io.*;
 import java.util.*;
