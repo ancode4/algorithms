@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 2. Terminal operators
     collect(), reduce(), foreach()
  */
-public class StreamTest {
+public class StreamBasic {
     private static final List<Integer> list = Arrays.asList(2,3,4,5,2);
     public static void main(String[] args) {
         foreach();
