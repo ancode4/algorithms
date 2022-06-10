@@ -10,14 +10,23 @@ public class StreamAdvanced {
     public static void main(String[] args) {
         Person john = new Person(ThreadLocalRandom.current().nextInt(1, Integer.MAX_VALUE),"John",28);
         Person jane = new Person(ThreadLocalRandom.current().nextInt(1, Integer.MAX_VALUE),"Jane",33);
-        List<Person> persons = new ArrayList<Person>(){{add(john);add(jane);}};
+        Person eliza = new Person(ThreadLocalRandom.current().nextInt(1, Integer.MAX_VALUE),"Eliza",28);
+        Person schmidt = new Person(ThreadLocalRandom.current().nextInt(1, Integer.MAX_VALUE),"Schmidt",31);
+        List<Person> persons = new ArrayList<Person>(){{add(john);add(jane);add(eliza);add(schmidt);}};
 
-        groupingBy(persons);
+        //toMap(persons);
+        groupByAge(persons);
     }
 
-    private static void groupingBy(List<Person> list){
+    private static void toMap(List<Person> list){
         Map<Integer,Person> map = list.stream().collect(Collectors.toMap(p -> p.getId(), p -> p));
         System.out.println(map);
+    }
+
+    private static void groupByAge(List<Person> list){
+        Map<Integer,List<Person>> personByAge = list.stream()
+                .collect(Collectors.groupingBy(Person::getAge));
+        System.out.println(personByAge);
     }
 
     private static class Person {
