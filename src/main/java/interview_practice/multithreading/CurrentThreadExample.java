@@ -1,4 +1,4 @@
-package interview_practice.concurrency;
+package interview_practice.multithreading;
 
 public class CurrentThreadExample {
     public static void main(String[] args){

@@ -1,6 +1,4 @@
-package interview_practice.concurrency;
-
-//import java.util.Scanner;
+package interview_practice.multithreading;
 
 public class MyThread extends Thread{
     @Override

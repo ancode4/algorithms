@@ -1,4 +1,4 @@
-package interview_practice.concurrency;
+package interview_practice.multithreading;
 
 public class MyRunnable {
 
