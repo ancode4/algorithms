@@ -1,21 +1,23 @@
 package interview_practice.concurrency;
 
-public class MyRunnable implements Runnable{
+public class MyRunnable {
 
-    @Override
-    public void run() {
-        System.out.println("MyRunnable running");
+    private static class RunnableExample implements Runnable {
+        @Override
+        public void run() {
+            System.out.println("RunnableExample running");
+        }
     }
 
     public static void main(String[] args) {
         Runnable runnable = () -> System.out.println("Lambda Runnable running");
 
-        MyRunnable myRunnable = new MyRunnable();
+        RunnableExample myRunnable = new RunnableExample();
 
         Thread normalThread = new Thread(myRunnable);
-        Thread l = new Thread(runnable);
+        Thread lambdaThread = new Thread(runnable);
 
         normalThread.start();
-        l.start();
+        lambdaThread.start();
     }
 }

@@ -5,14 +5,21 @@ package interview_practice.concurrency;
 public class MyThread extends Thread{
     @Override
     public void run(){
-        System.out.println("Thread Running");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("MyThread Running");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         /*Scanner sc = new Scanner(System.in);
         int i = sc.nextInt();
         System.out.println(i);*/
-        MyThread thread = new MyThread();
-        thread.start();
+        MyThread mythread = new MyThread();
+        mythread.start();
+        //mythread.join(); // will cause main thread to stop until mythread is finished
+        System.out.println("Continuing main()");
     }
 }
