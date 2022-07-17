@@ -1,4 +1,4 @@
-package interview_practice;
+package interview_practice.algorithms;
 
 
 import java.util.ArrayList;
