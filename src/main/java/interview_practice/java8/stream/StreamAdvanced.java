@@ -1,4 +1,4 @@
-package interview_practice.stream;
+package interview_practice.java8.stream;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ public class StreamAdvanced {
     }
 
     private static void toMap(List<Person> list){
-        Map<Integer,Person> map = list.stream().collect(Collectors.toMap(p -> p.getId(), p -> p));
+        Map<Integer,Person> map = list.stream().collect(Collectors.toMap(Person::getId, p -> p));
         System.out.println(map);
     }
 

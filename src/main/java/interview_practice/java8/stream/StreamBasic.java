@@ -1,4 +1,4 @@
-package interview_practice.stream;
+package interview_practice.java8.stream;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 /* STREAM OPERATORS
 1. Intermediate operators
-   map(), foreach(), sorted()
+   map(), filter(), sorted()
 2. Terminal operators
     collect(), reduce(), foreach()
  */
@@ -23,7 +23,7 @@ public class StreamBasic {
 
     // reduce - terminal operator - function performs operations on each list item collectively and returns single value
     private static void reduce() {
-        int even = list.stream().filter(x->x%2==0).reduce(0,(result,i)-> result+i);
+        int even = list.stream().filter(x->x%2==0).reduce(0, Integer::sum);
 
         System.out.println(even);
     }
@@ -38,7 +38,7 @@ public class StreamBasic {
     // map - intermediate operator - function performs operations on each list item and returns value for each list item.
     private static void map() {
         List<String> mappedList = list.stream()
-                .map(n -> {String a = "Number"+n; return a;})
+                .map(n -> "Number"+n)
                 .collect(Collectors.toList());
 
         System.out.println(list);
