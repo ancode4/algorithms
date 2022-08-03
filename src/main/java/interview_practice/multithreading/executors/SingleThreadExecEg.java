@@ -20,7 +20,7 @@ public class SingleThreadExecEg {
             return factorial;
         });*/
         Future<Integer> fact = service.submit(factCallable);
-
+        //service.execute(new RunnableFactorial());
         System.out.println("Value: "+fact.get());
     }
 }
